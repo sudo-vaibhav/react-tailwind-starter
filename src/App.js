@@ -1,9 +1,18 @@
-function App() {
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Layout/Navbar";
+
+const Home = () => {
+  return <div>React tailwind starter</div>;
+};
+const App = () => {
   return (
-    <div>
-      tailwind with react starter
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
