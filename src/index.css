@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import "react-toastify/dist/ReactToastify.css";
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  height: 100%;
+  overflow: auto;
+  @apply leading-loose;
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
 }
 
 h1,
@@ -15,30 +22,45 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
-}
-
-.container {
-  @apply mx-auto px-4 lg:px-0;
-}
-.btn-dark {
-  @apply bg-dark-900 text-light-100;
-}
-.btn-primary {
-  @apply bg-primary-700 text-dark-900;
-}
-.btn,
-.btn-lg {
-  @apply uppercase;
-}
-.btn {
-  @apply p-4;
-}
-
-.link {
-  @apply text-primary-700 underline;
+  @apply leading-tight;
 }
 
 * {
   outline: 0;
 }
+.container {
+  @apply mx-auto;
+}
+
+.link {
+  @apply text-primary underline cursor-pointer;
+}
+
+/* configuration for slick carousel begins */
+ul.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  @apply mt-2;
+}
+
+ul.slick-dots li {
+  margin: 0 5px;
+  @apply bg-grey-200 text-grey-200 overflow-hidden rounded-full w-2 h-2 cursor-pointer;
+}
+
+ul.slick-dots li.slick-active {
+  @apply bg-grey-500 text-grey-500;
+}
+
+.slick-arrow {
+  @apply z-20 mx-3 opacity-60 bg-grey-500 text-white rounded-full w-8 h-8 absolute bottom-1/2 cursor-pointer;
+}
+
+.slick-arrow.slick-prev {
+  @apply left-0;
+}
+.slick-arrow.slick-next {
+  @apply right-0;
+}
+
+/* configuration for slick carousel ends */
